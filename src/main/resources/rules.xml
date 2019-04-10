@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules>
+    <Rule id="brain">
+        <Question>Do you want to avoid using much of your brain?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="reflex">
+        <Question>Is your reflex is unreal?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="unreal"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="normal"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="multiplayer">
+        <Question>Do you like play with others?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="zombies">
+        <Question>Zombies?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="gameSpeed">
+        <Question>Dynamic action?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value = "shoot, fun, tempo, action"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="planning, creativity, strategy"/>
+            </Selection>
+        </Answer>
+    </Rule>
+</Rules>
