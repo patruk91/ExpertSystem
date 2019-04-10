@@ -48,7 +48,7 @@
         </Answer>
     </Rule>
     ...
-    <Rule id="gameSpeed">
+    <Rule id="gamespeed">
         <Question>Dynamic action?</Question>
         <Answer>
             <Selection value="true">

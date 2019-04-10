@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Facts>
+    <Fact id="callofduty">
+        <Description value = "Call of Duty: Modern Warfare 4"/>
+        <Evals>
+            <Eval id="brain">false</Eval>
+            <Eval id="reflex">true</Eval>
+            <Eval id="multiplayer">true</Eval>
+            <Eval id="zombies">true</Eval>
+            <Eval id="gamespeed">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="minecraft">
+        <Description value = "Minecraft"/>
+        <Evals>
+            <Eval id="brain">true</Eval>
+            <Eval id="reflex">false</Eval>
+            <Eval id="multiplayer">true</Eval>
+            <Eval id="zombies">false</Eval>
+            <Eval id="gamespeed">false</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="bioshock">
+        <Description value = "Bioshock Series"/>
+        <Evals>
+            <Eval id="brain">false</Eval>
+            <Eval id="reflex">true</Eval>
+            <Eval id="multiplayer">false</Eval>
+            <Eval id="zombies">false</Eval>
+            <Eval id="gamespeed">true</Eval>
+        </Evals>
+    </Fact>
+
+    <Fact id="totalwar">
+        <Description value = "Total War Series"/>
+        <Evals>
+            <Eval id="brain">true</Eval>
+            <Eval id="reflex">false</Eval>
+            <Eval id="multiplayer">false</Eval>
+            <Eval id="zombies">false</Eval>
+            <Eval id="gamespeed">false</Eval>
+        </Evals>
+    </Fact>
+
+
+</Facts>
