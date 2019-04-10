@@ -10,17 +10,21 @@ import java.io.File;
 import java.io.IOException;
 
 public abstract class XMLParser {
-    Document doc;
+    private Document doc;
 
     void loadXmlDocument(String xmlPath) {
         try {
             File fileToRead = new File(xmlPath);
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            documentBuilder.parse(fileToRead);
+            doc = documentBuilder.parse(fileToRead);
             doc.getDocumentElement().normalize();
         } catch (ParserConfigurationException | IOException | SAXException ex) {
             ex.printStackTrace();
         }
+    }
+
+    protected Document getDoc() {
+        return doc;
     }
 }
