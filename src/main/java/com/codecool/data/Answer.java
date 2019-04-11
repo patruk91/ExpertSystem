@@ -3,6 +3,7 @@ package com.codecool.data;
 import com.codecool.value.Value;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class Answer {
@@ -12,15 +13,17 @@ public class Answer {
         this.values = new ArrayList<>();
     }
 
-    public boolean evaluateAnswerByInput(String input) {
+    public boolean evaluateAnswerByInput(String input) throws InputMismatchException{
         for (Value value : values) {
             for (String element : value.getInputPattern()) {
                 if (element.equals(input)) {
-                    return true;
+                    return value.getSelectionType();
                 }
             }
         }
-        return false;
+        throw new InputMismatchException("Sorry we don't have this answer in our database.");
+        //how to throw this?
+//        return false;
     }
 
     public void addValue(Value value) {
