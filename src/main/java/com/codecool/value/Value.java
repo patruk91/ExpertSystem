@@ -7,11 +7,11 @@ public abstract class Value {
     boolean selectionType;
     List<String> patterns = new ArrayList<>();
 
-    protected boolean getSelectionType() {
+    public boolean getSelectionType() {
         return selectionType;
     }
 
-    protected List<String> getInputPattern() {
+    public List<String> getInputPattern() {
         return patterns;
     }
 
