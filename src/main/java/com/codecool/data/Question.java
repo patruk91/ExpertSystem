@@ -18,4 +18,12 @@ public class Question {
     public String getQuestion() {
         return question;
     }
+
+    public Answer getAnswer() {
+        return answer;
+    }
+
+    public boolean getEvaluatedAnswer(String input) {
+        return answer.evaluateAnswerByInput(input);
+    }
 }
