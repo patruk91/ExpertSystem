@@ -21,14 +21,15 @@ public class RuleParser extends XMLParser {
     public RuleParser() {
         this.ruleRepository = new RuleRepository();
         loadXmlDocument("src/main/resources/rules.xml");
+        parseRules(getDoc());
     }
 
     public RuleRepository getRuleRepository() {
         return ruleRepository;
     }
 
-    public void parseRules() {
-        Document document = getDoc();
+    public void parseRules(Document document) {
+
         NodeList nodeListRule = document.getElementsByTagName("Rule");
         for (int i = 0; i < nodeListRule.getLength(); i++) {
             Node nodeRule = nodeListRule.item(i);
