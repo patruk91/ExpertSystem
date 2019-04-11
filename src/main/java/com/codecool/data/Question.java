@@ -23,7 +23,7 @@ public class Question {
         return answer;
     }
 
-    public boolean getEvaluatedAnswer(String input) { //throw mismatchexception?
+    public boolean getEvaluatedAnswer(String input) {
         return answer.evaluateAnswerByInput(input);
     }
 }

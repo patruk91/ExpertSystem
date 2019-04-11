@@ -13,7 +13,7 @@ public class Answer {
         this.values = new ArrayList<>();
     }
 
-    public boolean evaluateAnswerByInput(String input) throws InputMismatchException{
+    public boolean evaluateAnswerByInput(String input) {
         for (Value value : values) {
             for (String element : value.getInputPattern()) {
                 if (element.equals(input)) {
