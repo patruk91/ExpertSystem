@@ -28,8 +28,7 @@ public class RuleParser extends XMLParser {
         return ruleRepository;
     }
 
-    public void parseRules(Document document) {
-
+    private void parseRules(Document document) {
         NodeList nodeListRule = document.getElementsByTagName("Rule");
         for (int i = 0; i < nodeListRule.getLength(); i++) {
             Node nodeRule = nodeListRule.item(i);
@@ -37,7 +36,6 @@ public class RuleParser extends XMLParser {
                 Element element = (Element) nodeRule;
                 addQuestion(element);
             }
-
         }
     }
 
@@ -64,19 +62,28 @@ public class RuleParser extends XMLParser {
     }
 
     private Value createValues(Element selectionValue) {
-        int objectIndex = 0;
-        String compareValue = selectionValue.getFirstChild().getNextSibling().getNodeValue();
+        Node nodeValue = selectionValue.getFirstChild().getNextSibling();
+        String compareValue = nodeValue.getNodeName();
+        String values = nodeValue.getAttributes().getNamedItem("value").getNodeValue();
+
         if (compareValue.equals("SingleValue")) {
-            NodeList singleValueList = selectionValue.getElementsByTagName("SingleValue");
-            String singleValue = singleValueList.item(objectIndex).getAttributes().getNamedItem("value").toString();
-            boolean typeSelection = Boolean.valueOf(selectionValue.getAttributes().getNamedItem("value").getTextContent());
-            return new SingleValue(singleValue, typeSelection);
+            return createSingleValue(values, selectionValue);
         } else {
-            NodeList multipleValueList = selectionValue.getElementsByTagName("MultipleValue");
-            List<String> multipleValue = new ArrayList<>(Arrays.asList(multipleValueList.item(objectIndex).getAttributes().getNamedItem("value").toString().split(",")));
-            boolean typeSelection = Boolean.valueOf(selectionValue.getAttributes().getNamedItem("value").getTextContent());
-            return new MultpileValue(multipleValue, typeSelection);
+            return createMultipleValue(values, selectionValue);
         }
+    }
+
+    private Value createSingleValue(String values, Element selectionValue) {
+        return new SingleValue(values, getTypeSelection(selectionValue));
+    }
+
+    private Value createMultipleValue(String values, Element selectionValue) {
+        List<String> multipleValue = new ArrayList<>(Arrays.asList(values.split(",")));
+        return new MultpileValue(multipleValue, getTypeSelection(selectionValue));
+    }
+
+    private boolean getTypeSelection(Element selectionValue) {
+        return Boolean.valueOf(selectionValue.getAttributes().getNamedItem("value").getTextContent());
     }
 
 
