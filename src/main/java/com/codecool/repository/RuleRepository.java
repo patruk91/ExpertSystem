@@ -32,15 +32,8 @@ public class RuleRepository {
         public Question next() {
             if (!this.hasNext()) {
                 throw new NoSuchElementException();
-                // or return null
             }
-//            (Question) questions.values().toArray()[index++];
-            index++;
-            String keyId = questions.keySet().iterator().next();
-            return questions.get(keyId);
-
-
+            return (Question) questions.values().toArray()[index++];
         }
     }
-
 }
