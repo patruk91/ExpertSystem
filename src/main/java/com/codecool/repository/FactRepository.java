@@ -24,9 +24,10 @@ public class FactRepository {
     public Iterator<Fact> getIterator() {
         return iterator;
     }
-    
+
     private class FactIterator implements Iterator<Fact> {
         private int index = 0;
+
         @Override
         public boolean hasNext() {
             return index < facts.size();
@@ -40,9 +41,6 @@ public class FactRepository {
             }
 //            (Question) questions.values().toArray()[index++];
             return facts.get(index++);
+        }
     }
-
-
-
-
 }
