@@ -1,18 +1,19 @@
 package com.codecool.provider;
 
 import com.codecool.parser.FactParser;
-import com.codecool.repository.FactRepository;
+import com.codecool.parser.RuleParser;
 
 public class ESProvider {
+    private RuleParser ruleParser;
     private FactParser factParser;
-    private FactRepository factRepository;
 
-    public ESProvider(FactParser factParser, FactRepository factRepository) {
+    public ESProvider(RuleParser ruleParser, FactParser factParser) {
+        this.ruleParser = ruleParser;
         this.factParser = factParser;
-        this.factRepository = factRepository;
     }
 
     public void collectAnswers() {
+        
 
     }
 
