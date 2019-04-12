@@ -15,6 +15,7 @@ public class Answer {
 
     public boolean evaluateAnswerByInput(String input) {
         for (Value value : values) {
+            System.out.println(value.getInputPattern());
             for (String element : value.getInputPattern()) {
                 if (element.equals(input)) {
                     return value.getSelectionType();
@@ -22,11 +23,18 @@ public class Answer {
             }
         }
         throw new InputMismatchException("Sorry we don't have this answer in our database.");
-        //how to throw this?
-//        return false;
     }
 
     public void addValue(Value value) {
         values.add(value);
     }
+
+    public String getValues() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Value value : values) {
+            stringBuilder.append(value.getInputPattern());
+        }
+        return stringBuilder.toString();
+    }
+
 }
