@@ -48,15 +48,18 @@ public class RuleParser extends XMLParser {
     }
 
     private Answer addAnswer(Element element) {
+
         int objectIndex = 0;
         Answer answer = new Answer();
-        Element answerElement = (Element) element.getElementsByTagName("Question").item(objectIndex);
+        Element answerElement = (Element) element.getElementsByTagName("Answer").item(objectIndex);
         NodeList selectionsList = answerElement.getElementsByTagName("Selection");
 
         for (int i = 0; i < selectionsList.getLength(); i++) {
             Element selectionValue = (Element) selectionsList.item(i);
+
             Value value = createValues(selectionValue);
             answer.addValue(value);
+
         }
         return answer;
     }
