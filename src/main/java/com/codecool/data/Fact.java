@@ -7,10 +7,10 @@ import java.util.Set;
 
 public class Fact {
     private String id;
-    private Boolean  description;
+    private String  description;
     private Map<String, Boolean> facts;
 
-    public Fact(String id, Boolean description) {
+    public Fact(String id, String description) {
         this.id = id;
         this.description = description;
         this.facts = new LinkedHashMap<>();
@@ -33,7 +33,7 @@ public class Fact {
         return facts.get(id);
     }
 
-    public Boolean getDescription() {
+    public String getDescription() {
         return description;
     }
 }
