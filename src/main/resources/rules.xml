@@ -52,10 +52,10 @@
         <Question>Dynamic action?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value = "shoot, fun, tempo, action"/>
+                <MultipleValue value = "shoot,fun,tempo,action"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="planning, creativity, strategy"/>
+                <MultipleValue value="planning,creativity,strategy"/>
             </Selection>
         </Answer>
     </Rule>
