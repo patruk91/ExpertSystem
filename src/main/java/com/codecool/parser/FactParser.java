@@ -17,6 +17,6 @@ public class FactParser extends  XMLParser{
     }
 
     private void parseFacts(Document document) {
-        
+
     }
 }
