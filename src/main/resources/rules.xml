@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules>
     <Rule id="brain">
-        <Question>Do you want to avoid using much of your brain?</Question>
+        <Question>Do you want to use your brain?</Question>
         <Answer>
             <Selection value="true">
                 <SingleValue value="yes"/>
