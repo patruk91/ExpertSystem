@@ -13,9 +13,8 @@ public class Answer {
         this.values = new ArrayList<>();
     }
 
-    public boolean evaluateAnswerByInput(String input) {
+    boolean evaluateAnswerByInput(String input) {
         for (Value value : values) {
-            System.out.println(value.getInputPattern());
             for (String element : value.getInputPattern()) {
                 if (element.equals(input)) {
                     return value.getSelectionType();
